@@ -1,30 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link href="style.css" rel="stylesheet">
-	<link href='https://fonts.googleapis.com/css?family=Allerta+Stencil' rel='stylesheet' type='text/css'>
+  <link href="style.css" rel="stylesheet">
+  
+  <link href='https://fonts.googleapis.com/css?family=Allerta+Stencil' rel='stylesheet' type='text/css'>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+
+$(document).ready(function() {
+  var $slider = $('.slider'); 
+  var $slide = 'li'; 
+  var $transition_time = 1000; 
+  var $time_between_slides = 4000; 
+
+  function slides(){
+    return $slider.find($slide);
+  }
+
+  slides().fadeOut();
+
+  
+  slides().first().addClass('active');
+  slides().first().fadeIn($transition_time);
+
+  
+  $interval = setInterval(
+    function(){
+      var $i = $slider.find($slide + '.active').index();
+
+      slides().eq($i).removeClass('active');
+      slides().eq($i).fadeOut($transition_time);
+
+      if (slides().length == $i + 1) $i = -1; 
+
+      slides().eq($i + 1).fadeIn($transition_time);
+      slides().eq($i + 1).addClass('active');
+    }
+    , $transition_time +  $time_between_slides 
+  );
+});
+</script>
+</script>
+
 </head>
 <body>
 <header>
 <img src="https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpa1/t1.0-9/1555524_10201324430457198_1930011516_n.jpg">
-	<h1>Rob Fitzpatrick</h1>
-	<ul>
-		<li><a href="mailto:rmfitzpatrick@gmail.com">Email</a></li>
-		<li><a href="https://www.linkedin.com/pub/robert-fitzpatrick/66/784/33a">Linked In</a></li>
-		<li><a href="https://www.facebook.com/rob.fitzpatrick.148">Facebook</a></li>
-		<li><a href="http://sickoids.bandcamp.com/">Bandcamp</a></li>
+  <h1>Rob Fitzpatrick</h1>
+  <ul>
+    <li><a href="mailto:rmfitzpatrick@gmail.com">Email</a></li>
+    <li><a href="https://www.linkedin.com/pub/robert-fitzpatrick/66/784/33a">Linked In</a></li>
+    <li><a href="https://www.facebook.com/rob.fitzpatrick.148">Facebook</a></li>
+    <li><a href="http://sickoids.bandcamp.com/">Bandcamp</a></li>
 
-	</ul>
-	<h2>So who is this guy?</h2>
+  </ul>
 </header>
-<img src="https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/1010778_10200251568116310_222161607_n.jpg?oh=66f6482195bb751a4018c98dbbe6b5bd&oe=54576BAC&__gda__=1413438708_96048af7c2d8dd0f5d533d02b3fda477">
-	<p>Yes, you have reached the magnificent website of the one, the only, Rob Fitzpatrick...  Musician.  Artist.  Spokesman of a generation?  Please, try and contain your excitement!	Mr. Fitzpatrick is currently on leave from his life-long passion of music so he can pursue an expedited education in his new passion, web development!  Will this be an interesting experience?  All signs point to YES!  But that's not to say it won't be tough!  The last two years have had their share of ups and downs since Mr. Fitzpatrick relocated to the infamous San Francisco Bay Area.  A stranger in a strange land you might say.  The dense fog, terrible drivers, and stench of patchouli might have done him in if it weren't for the endless support of Emily, the love of his life, and his special little dog, Sid.</p>  
 
-<h2>Please get in touch!</h2>	
+
+ <h2>So who is this guy?</h2>
+
+<img id="boat" src="https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/1010778_10200251568116310_222161607_n.jpg?oh=66f6482195bb751a4018c98dbbe6b5bd&oe=54576BAC&__gda__=1413438708_96048af7c2d8dd0f5d533d02b3fda477">
+
+
+  <p>Yes, you have reached the magnificent website of the one, the only, Rob Fitzpatrick...  Musician.  Artist.  Spokesman of a generation?  Please, try and contain your excitement! Mr. Fitzpatrick is currently on leave from his life-long passion of music so he can pursue an expedited education in his new passion, web development!  Will this be an interesting experience?  All signs point to YES!  But that's not to say it won't be tough!  The last two years have had their share of ups and downs since Mr. Fitzpatrick relocated to the infamous San Francisco Bay Area.  A stranger in a strange land you might say.  The dense fog, terrible drivers, and stench of patchouli might have done him in if it weren't for the endless support of Emily, the love of his life, and his special little dog, Sid.</p> 
+
+  <ul class="slider">
+  <li>
+    <img id="carousel" src="https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/36290_3770563467067_634755146_n.jpg?oh=bb698d0635d62279c0b8126c73374257&oe=5453ED97&__gda__=1412943596_9358d9d9fc9161365392bf0a55e9c9ac"> 
+  </li>
+  <li>
+    <img id="carousel" src="https://mail.google.com/mail/u/0/?ui=2&ik=2ff8774ceb&view=att&th=147a21e9a53c4a76&attid=0.14&disp=emb&realattid=ii_14793f4fa4b9966d&zw&atsh=1"> 
+  </li>
+  <li>
+    <img id="carousel" src="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xap1/t1.0-9/1383254_10200801343620354_1212685475_n.jpg"> 
+  </li>
+  <li>
+    <img id="carousel" src="https://scontent-b-sea.xx.fbcdn.net/hphotos-xpf1/v/l/t1.0-9/10259863_10201946088958272_9062555663931432029_n.jpg?oh=61753403166b235f3448e54d2fb1c989&oe=543A6C53"> 
+  </li>
+</ul> 
+
+<h2>Please get in touch!</h2>
+
+<img id="punk" src="https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xfp1/t1.0-9/10524633_10202623451091902_2048993329016974885_n.jpg">	
 
 <input type="email" placeholder="Your email">
 <input type="submit">
-</footer/>
 
 </body>
 </html>

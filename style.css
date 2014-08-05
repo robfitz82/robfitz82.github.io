@@ -1,51 +1,97 @@
 body {
-	background: black;
-	color: white;
-	max-width: 800px;
-	margin: 0 auto;
+  background: black;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
 }
 header {
-	text-align: center;
+  text-align: center;
 }
 a {
-	font-size: 20px;
-	font-weight: bold;
-	margin-right: 60px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 60px;
 }
 
 h1{
-	font-size: 75px;
-	text-align: center;
-	padding: 50px;
-	font-family: 'Allerta Stencil', sans-serif;
+  font-size: 75px;
+  text-align: center;
+  padding: 50px;
+  font-family: 'Allerta Stencil', sans-serif;
 }
 h2 {
-	font-size: 50px;
-	text-align: center;
-	font-family: 'Allerta Stencil', sans-serif;
+  font-size: 50px;
+  text-align: center;
+  font-family: 'Allerta Stencil', sans-serif;
 
 }
 ul {
-	background: white;
+  background: white;
 }
 li {
-	display: inline;
-	padding: 0 15px 0 15px;
+  display: inline;
+  padding: 0 15px 0 15px;
 }
+
 
 img {
-	height: 254px;
-	float: right;
-	padding: 20px;
-	border-radius: 360px;
+  height: 254px;
+  float: right;
+  padding: 20px;
+  border-radius: 360px;
 }
+
+#boat {
+  height: 254px;
+  float: center;
+  padding: 0px;
+  border-radius: 0;
+  margin-left: 250px;
+}
+
+
 p {
-	font-size: 30px;
-	text-align: center;
+  font-size: 30px;
+  text-align: center;
+}
+#punk {
+  height: 254px;
+  float: left;
+  padding: 20px;
+  border-radius: 500px;
+}
+.slider {
+  margin-left: 250px;
+  height: 254px; 
+  width: 325px;
+  background: black;
+  position: relative;
+  overflow: hidden;
 }
 
+.slider li {
+  display: none;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+}
+#carousel {
+	
+	width: 254px;
+	padding: 0;
+	border-radius: 0;
+	background: black;
+}
 
-
+input {
+	border: 0;
+	padding: 10px;
+	font-size: 20px;
+}
+input[type="submit"] {
+	background: red;
+	color: black;
+}
 
 
 
